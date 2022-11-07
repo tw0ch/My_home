@@ -1,0 +1,9 @@
+# Files and directories created by pub.
+my_home/.dart_tool/
+my_home/.idea/
+my_home/.packages
+
+# Conventional directory for build output.
+my_home/build/
+my_home/.metadata
+my_home/my_home.iml
