@@ -32,7 +32,8 @@ dependencies:
   flutter:
     sdk: flutter
   google_nav_bar: ^5.0.6
-
+  lottie: 2.0.0
+  delayed_display: ^2.0.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -68,17 +69,13 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-#  assets:
-#    - assets/
-#    - assets/splash_screen_img/image1.png
-#    - assets/registration_background/
-#    - assets/img
-#flutter:
   assets:
-    - assets/splash_screen_img/logo_splash.png
-    - assets/registration_background/registration_background.png
-    - assets/123.jpg
-    - assets/img/image1.png
+    - assets/lottie/my_house.json
+    - assets/lottie/reg_form_in.json
+    - assets/lottie/reg_form_in1.json
+    - assets/lottie/reg_form_in2.json
+    - assets/lottie/reg_form_in3.json
+    - assets/icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -92,23 +89,24 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: my_home_icon
+    - family: MontserratAlternates
       fonts:
-        - asset: assets/icons/My_home_icons/fonts/My_home_icon.ttf
+        - asset: assets/fonts/MontserratAlternates-SemiBold.ttf
+          style: normal
 
-    - family: registration_icons
+    - family: Manrope
       fonts:
-        - asset: assets/icons/registration_icons/fonts/Registration_icons.ttf
+        - asset: assets/fonts/Manrope-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Manrope-SemiBold.ttf
+          weight: 400
+        - asset: assets/fonts/Manrope-Regular.ttf
+          weight: 600
 
-    - family: Inter
+    - family: My_home_logo
       fonts:
-        - asset: assets/fonts/Inter-Regular.ttf
-          style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
-  #
+        - asset: assets/icons/My_home_logo_icon.ttf
+
+
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

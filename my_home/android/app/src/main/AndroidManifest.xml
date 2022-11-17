@@ -2,8 +2,7 @@
     package="com.StrangeLove.my_home">
    <application
         android:label="Мой дом"
-        android:name="${applicationName}"
-        android:icon="@mipmap/launcher_icon">
+        android:name="${applicationName}">
         <activity
             android:name=".MainActivity"
             android:exported="true"
