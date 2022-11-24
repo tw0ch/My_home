@@ -34,6 +34,8 @@ dependencies:
   google_nav_bar: ^5.0.6
   lottie: 2.0.0
   delayed_display: ^2.0.0
+  flutter_svg: ^1.1.6
+  flip_card: ^0.6.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -76,7 +78,13 @@ flutter:
     - assets/lottie/reg_form_in2.json
     - assets/lottie/reg_form_in3.json
     - assets/icons/
-
+    - assets/img/camera.png
+    - assets/img/instruments.png
+    - assets/img/water.png
+    - assets/img/user/arkadiy0.png
+    - assets/img/user/micke0.png
+    - assets/img/user/janna0.png
+    - assets/img/user/anna0.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

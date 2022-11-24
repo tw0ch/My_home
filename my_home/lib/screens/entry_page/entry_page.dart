@@ -54,7 +54,6 @@ class Login_page extends StatefulWidget {
 }
 
 class _Login_pageState extends State<Login_page> {
-
   static const int _width_of_form = 10;
   static const double _high_of_form = 5.5;
 
@@ -70,19 +69,21 @@ class _Login_pageState extends State<Login_page> {
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.transparent,
       body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child:
+        // Column(
+        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
           // crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
+          // children: [
             Column(
               children: [
-                SizedBox(height: 20),
+                Expanded(flex: 2, child: Container()),
                 Icon(
                   My_home_logo.my_home_logo_icon,
                   size: 75,
                   color: Colors.white,
                 ),
-                SizedBox(height: 9),
+                SizedBox(height: 10),
+                Expanded(flex: 1, child: Container()),
                 Text(
                   "МойДом",
                   style: TextStyle(
@@ -91,10 +92,10 @@ class _Login_pageState extends State<Login_page> {
                     fontSize: 35,
                   ),
                 ),
-              ],
-            ),
-            Column(
-              children: [
+                Expanded(flex: 1, child: Container()),
+              // ],
+            // Column(
+            //   children: [
                 Text(
                   "Добро\nпожаловать",
                   textAlign: TextAlign.center,
@@ -168,7 +169,7 @@ class _Login_pageState extends State<Login_page> {
                             (MediaQuery.of(context).size.width /
                                 _width_of_form *
                                 2),
-                        60), //////// HERE
+                        60),
                   ),
                   child: const Text(
                     'Войти',
@@ -236,8 +237,8 @@ class _Login_pageState extends State<Login_page> {
                 ),
               ],
             ),
-          ],
-        ),
+      //     ],
+      //   ),
       ),
     );
   }

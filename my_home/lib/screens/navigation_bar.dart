@@ -9,7 +9,7 @@ class Navigation_bar extends StatefulWidget {
 }
 
 class _Navigation_barState extends State<Navigation_bar> {
-  int selectedPage = 0;
+  int selectedPage = 1;
   static const List<Widget> widgetOptions = <Widget>[
     MyHome(),
     MainPage(),
@@ -44,11 +44,11 @@ class _Navigation_barState extends State<Navigation_bar> {
               tabs: const [
                 GButton(
                   icon: Icons.home,
-                  text: "Профиль дома",
+                  text: "МойДом",
                 ),
                 GButton(
                   icon: Icons.home,
-                  text: "МойДом",
+                  text: "Главная",
                 ),
                 GButton(
                   icon:  Icons.chat,

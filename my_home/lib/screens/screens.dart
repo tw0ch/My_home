@@ -1,4 +1,4 @@
-export 'main.dart';
+export '../main.dart';
 
 export 'navigation_bar.dart';
 
@@ -18,3 +18,9 @@ export 'package:google_nav_bar/google_nav_bar.dart';
 export 'myhome_page/myhome_page.dart';
 
 export 'TSJconnect_page/TSJconnect_page.dart';
+
+export 'package:flutter_svg/flutter_svg.dart';
+
+export 'package:my_home/utils.dart';
+
+export 'package:my_home/screens/profile_page/profile_page.dart';

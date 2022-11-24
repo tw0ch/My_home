@@ -8,9 +8,10 @@ void main() {
       initialRoute: "/entry",
       routes: {
         "/": (context) => const Navigation_bar(),
-        "/entry": (context) => const EntryPage(),
+        "/entry": (context) => const  EntryPage(),
         "/registration": (context) => const RegistrationPage(),
         "/registration/registration_end": (context) => const RegistrationPage2(),
+        '/profile': (context) => const ProgilePage(),
       },
     ),
   );
