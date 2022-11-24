@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_home/screens/screens.dart';
 import 'package:lottie/lottie.dart';
 import 'package:delayed_display/delayed_display.dart';
 

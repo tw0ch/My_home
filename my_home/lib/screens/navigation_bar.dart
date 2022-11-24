@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:my_home/screens/screens.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
+import 'TSJconnect_page/TSJconnect_page.dart';
+import 'main_page/main_page.dart';
+import 'myhome_page/myhome_page.dart';
+
 
 class Navigation_bar extends StatefulWidget {
   const Navigation_bar({Key? key}) : super(key: key);

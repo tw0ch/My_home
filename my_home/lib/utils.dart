@@ -1,5 +1,3 @@
-import 'package:my_home/screens/screens.dart';
-
 class Notifications {
   String name;
   String description;

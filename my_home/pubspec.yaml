@@ -45,7 +45,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_launcher_icons: "^0.10.0"
+  flutter_launcher_icons: ^0.10.0
 
 flutter_icons:
   android: "launcher_icon"
@@ -78,13 +78,9 @@ flutter:
     - assets/lottie/reg_form_in2.json
     - assets/lottie/reg_form_in3.json
     - assets/icons/
-    - assets/img/camera.png
-    - assets/img/instruments.png
-    - assets/img/water.png
-    - assets/img/user/arkadiy0.png
-    - assets/img/user/micke0.png
-    - assets/img/user/janna0.png
-    - assets/img/user/anna0.png
+    - assets/img/
+    - assets/img/user/
+    - assets/img/near_page/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

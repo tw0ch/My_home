@@ -1,7 +1,5 @@
 import 'package:my_home/utils.dart';
-import 'package:my_home/screens/screens.dart';
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:flip_card/flip_card.dart';
 
 double deviceHeight(BuildContext context) => MediaQuery.of(context).size.height;
@@ -79,10 +77,9 @@ class TopBar extends StatelessWidget {
   }
 }
 
-class ItemList extends StatelessWidget {
+class HomeTabPage extends StatelessWidget {
   List<Notifications> notifications = Utils.getListNotifications();
 
-  // List<>
   final _widthContainer = 330.0;
 
   @override
@@ -237,18 +234,14 @@ class _TopNavigationBarState extends State<TopNavigationBar> {
   ];
 
   List<Widget> MainPageWidgets = [
-    Expanded(child: ItemList()),
-    UserExpense(),
+    Expanded(child: HomeTabPage()),
+    UserExpenseTabPage(),
     Container(
       width: 100,
       height: 100,
       color: Colors.green,
     ),
-    Container(
-      width: 100,
-      height: 100,
-      color: Colors.blue,
-    ),
+    NearHomeTabPage(),
   ];
 
   @override
@@ -319,8 +312,8 @@ class _TopNavigationBarState extends State<TopNavigationBar> {
   }
 }
 
-class UserExpense extends StatelessWidget {
-  const UserExpense({Key? key}) : super(key: key);
+class UserExpenseTabPage extends StatelessWidget {
+  const UserExpenseTabPage({Key? key}) : super(key: key);
 
   static double _textPeriodSizeMainContainer = 16;
   static double _textBalanceSizeMainContainer = 33;
@@ -384,9 +377,7 @@ class UserExpense extends StatelessWidget {
         Row(
           children: [
             InkWell(
-              onTap: () {
-
-              },
+              onTap: () {},
               child: Container(
                 width: 85,
                 height: 65,
@@ -458,5 +449,169 @@ class UserExpense extends StatelessWidget {
         )
       ],
     );
+  }
+}
+
+class NearHomeTabPage extends StatelessWidget {
+  const NearHomeTabPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Text('Интересные и популярные\nместа поблизости к Вам'),
+            Container(
+              width: 300,
+              height: 50,
+              color: Colors.red,
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            ItemGribNearHomeTab(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class ItemGribNearHomeTab extends StatelessWidget {
+  ItemGribNearHomeTab({Key? key}) : super(key: key);
+
+  static TextAlign _textAlign = TextAlign.center;
+
+  static Column _itemText(String data) {
+    return Column(
+      children: [
+        SizedBox(
+          height: 5,
+        ),
+        Container(
+          width: 130,
+          alignment: Alignment.center,
+          child: Text(
+            data,
+            textAlign: _textAlign,
+          ),
+        ),
+        SizedBox(
+          height: 10,
+        ),
+      ],
+    );
+  }
+
+  static BoxDecoration _itemContainerDecoration =
+      BoxDecoration(borderRadius: BorderRadius.circular(20));
+
+  static _itemContainerSmall({
+    required String asset_img,
+    required double width,
+    required double height}) {
+    return Container(
+      width: width,
+      height: height,
+      decoration: _itemContainerDecoration,
+      child: FittedBox(
+        child: Image.asset(
+          'assets/img/near_page/$asset_img.png',
+          width: width + 40,
+          height: height + 40,
+        ),
+        fit: BoxFit.none,
+      ),
+    );
+  }
+  static _itemContainerLarge({
+    required String asset_img,
+    required double width,
+    required double height}) {
+    return Container(
+      width: width,
+      height: height,
+      decoration: _itemContainerDecoration,
+      child: FittedBox(
+        child: Image.asset(
+          'assets/img/near_page/$asset_img.png',
+          width: width,
+          height: height,
+        ),
+        fit: BoxFit.none,
+      ),
+    );
+  }
+
+  List<Widget> firstColumn = [
+    _itemContainerSmall(asset_img: 'supermarket', width: 130, height: 100),
+    _itemText('Продуктовые\nмагазины'),
+    _itemContainerSmall(asset_img: 'park', width: 130, height: 170),
+    _itemText('Парки'),
+    _itemContainerSmall(asset_img: 'drugs', width: 130, height: 100),
+    _itemText('Аптеки'),
+    _itemContainerSmall(asset_img: 'club', width: 130, height: 100),
+    _itemText('Клубы/бары'),
+  ];
+
+  List<Widget> secondColumn = [
+    _itemContainerLarge(asset_img: 'shop', width: 185, height: 150),
+    _itemText('Продуктовые\nмагазины'),
+    _itemContainerLarge(asset_img: 'sinema', width: 185, height: 120),
+    _itemText('Парки'),
+    _itemContainerLarge(asset_img: 'cafe', width: 183, height: 250),
+    _itemText('Аптеки'),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Expanded(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: firstColumn,
+          ),
+        ),
+        Flexible(
+          fit: FlexFit.tight,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisSize: MainAxisSize.min,
+            children: secondColumn,
+          ),
+        ),
+      ],
+    );
+    //   SingleChildScrollView(
+    //   child: Row(
+    //     children: [
+    //       Column(
+    //         children: [
+    //           firstColumn[0],
+    //           SizedBox(height: 10,),
+    //           firstColumn[2],
+    //           SizedBox(height: 10,),
+    //           firstColumn[4]
+    //         ],
+    //       ),
+    //       SizedBox(width: 10),
+    //       Column(
+    //         children: [
+    //           secondColumn[0],
+    //           SizedBox(height: 10),
+    //           secondColumn[2],
+    //           SizedBox(height: 10),
+    //           secondColumn[4],
+    //         ],
+    //       ),
+    //     ],
+    //   ),
+    // );
   }
 }
